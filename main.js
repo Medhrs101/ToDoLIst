@@ -4,9 +4,9 @@ Vue.component('todo-input', {
     template: `
     <form  @submit.prevent="pushToList">
         <label for="Todoinput">
-            <input v-model="title" type="text" id="Todoinput" placeholder="todo...">
+            <input required v-model="title" type="text" id="Todoinput" placeholder="todo...">
         </label>
-        <button type="submit">To do</button>
+        <button class="addBtn" type="submit">To do</button>
     </form>`,
     data() {
         return {
@@ -36,8 +36,9 @@ Vue.component('todo-list', {
     },
     template: `
     <ul class="toDoList">
-        <li class="toDo" v-for="item in todolist">
-            {{item.title}}
+        <li class="todo" v-for="item in todolist">
+            {{item.todo}}
+            <span class="close" @click="deleteTodo(item.id)">&#x2715</span>
         </li>
     </ul>
     `,
@@ -46,18 +47,29 @@ Vue.component('todo-list', {
             title: null,
         }
     },
+    methods: {
+        deleteTodo(id) {
+            this.$emit('delete-from-list',id)
+        }
+    }
 })
 
 let vm = new Vue({
     el: '#root',
     data: {
         title: "to do list",
-        toDoList: ['hello', 'hello', 'hello'],
+        todolist: [],
     },
     methods: {
         pushToList(item) {
             console.log('helloooooo', item)
-            this.toDoList.push(item);
+            this.todolist.push(item);
+            // console.log()
+        },
+
+        removeFromList(id) {
+            console.log('hellllllllll')
+            this.todolist = this.todolist.filter((item) => item.id !== id)
         }
     }
 })

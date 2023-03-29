@@ -12,8 +12,11 @@
 <body>
     <div class="nav-bar"></div>
     <div id="root">
-        <todo-input></todo-input>
-        <todo-list @add-to-list="pushToList" :toDoList="todolist"></todo-list>
+        <h3 class="title">To Do List</h3>
+        <div class="container">
+            <todo-input @add-to-list="pushToList"></todo-input>
+            <todo-list @delete-from-list="removeFromList" :toDoList="todolist"></todo-list>
+        </div>
 
     </div>
     <script src=" https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>

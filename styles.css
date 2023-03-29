@@ -1,0 +1,84 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    font-family: Gotham Rounded, sans-serif;
+    font-weight: normal;
+    background-color: #e7e7e7;
+}
+
+
+.title {
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: center;
+    color: orangered
+}
+
+/* .description {
+    color: rgb(127, 125, 125);
+    text-align: center;
+} */
+
+.container {
+    margin: auto;
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    /* border: 0.5rem solid rgb(108, 108, 108); */
+    width: 50%;
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+input {
+    margin: 0;
+    border: none;
+    border: 0.1rem solid rgb(108, 108, 108);
+    border-radius: 0;
+    width: 75%;
+    padding: 10px;
+    float: left;
+    font-size: 16px;
+}
+
+
+.addBtn {
+    padding: 10px;
+    width: 25%;
+    background: #d9d9d9;
+    color: #555;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 0;
+}
+
+.addBtn:hover {
+    background-color: #bbb;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.todo {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem;
+    padding: 0.5rem;
+    border: 0.1rem solid rgb(108, 108, 108);
+}
+
+.close {
+    color: black;
+    font-weight: bolder;
+    padding: 0.1rem;
+}
+
+.close:hover {
+    background-color: #f44336;
+    color: white;
+}
